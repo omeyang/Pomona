@@ -1,0 +1,11 @@
+/target
+
+# 运行时产物（由工具生成，不入库）
+pomona-plan.toml
+*.pomona-push.toml
+*.log
+
+# 镜像/临时工作目录
+*-mirror.git/
+mirror.git/
+work.git/

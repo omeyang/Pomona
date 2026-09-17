@@ -1,0 +1,30 @@
+[package]
+name = "pomona"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Pomona: prune superseded package blobs from git history while keeping every branch tip intact"
+license = "MIT"
+repository = "https://github.com/omeyang/Pomona"
+publish = false
+
+[lib]
+name = "pomona"
+path = "src/lib.rs"
+
+[[bin]]
+name = "git-pomona"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+regex = "1"
+serde = { version = "1", features = ["derive"] }
+tempfile = "3"
+toml = "0.8"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
